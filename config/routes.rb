@@ -6,6 +6,7 @@ Rails.application.routes.draw do
    root to:"homes#top"
 
   resources :books, only: [:new, :index, :show, :edit, :create, :destroy, :update]do
+   resources :book_comments, only: [:create,:destroy]
     resource :favorite,only: [:create,:destroy]
   end
   resources :users, only: [:show, :edit, :index, :update]
